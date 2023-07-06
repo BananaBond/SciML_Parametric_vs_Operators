@@ -9,8 +9,10 @@ X1, X2 = np.meshgrid(x1, x2)
 
 # Set the parameters
 t = 0.01  # final time
-d = 5  # number of terms in the sum
-mu = np.ones(d)  # set all parameter values to 1
+d = 2 # number of terms in the sum
+mu = np.random.uniform(-1, 1, d)  # mu values are random numbers between -1 and 1, each time the solution looks a bit different
+
+
 
 # Define the initial condition function
 def u0(x1, x2, mu):
