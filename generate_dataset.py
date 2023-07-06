@@ -36,7 +36,7 @@ for i in range(int(number_of_sets)):
 
     X1, X2 = np.meshgrid(x1, x2)
 
-    mu = np.random.random(d)*2. - 1.  # set all parameter values to 1
+    mu = np.random.random(d)*2. - 1.  # set all parameter values to a random value
     input_mu.append(mu)
     input.append(np.array([X1, X2, u0(X1, X2, mu)]).transpose(1, 2, 0))
     output.append(u(t, X1, X2, mu))
