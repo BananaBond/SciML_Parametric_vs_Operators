@@ -91,7 +91,7 @@ def fit(model, training_set, num_epochs, optimizer, p, verbose=True):
         history.append(running_loss[0])
 
     return history
-
+    
 
 class Legendre(nn.Module):
     """ Univariate Legendre Polynomial """
