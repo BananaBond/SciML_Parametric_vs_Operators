@@ -1,6 +1,7 @@
 import torch.nn as nn
 import torch
 import os
+import time
 
 os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
 torch.manual_seed(42)
@@ -62,12 +63,14 @@ class NeuralNet(nn.Module):
 
 def fit(model, training_set, num_epochs, optimizer, p, verbose=True):
     history = list()
+    start_time = time.time()  # Start measuring time
 
     # Loop over epochs
     for epoch in range(num_epochs):
         if verbose: print("################################ ", epoch, " ################################")
 
         running_loss = list([0])
+
 
         # Loop over batches
         for j, (x_train_, u_train_) in enumerate(training_set):
@@ -90,7 +93,10 @@ def fit(model, training_set, num_epochs, optimizer, p, verbose=True):
         if verbose: print('Loss: ', (running_loss[0] / len(training_set)))
         history.append(running_loss[0])
 
-    return history
+    end_time = time.time()  # Stop measuring time
+    run_time = end_time - start_time
+
+    return history, run_time / num_epochs
     
 
 class Legendre(nn.Module):
