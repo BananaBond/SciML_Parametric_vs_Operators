@@ -63,6 +63,7 @@ class NeuralNet(nn.Module):
 
 def fit(model, training_set, num_epochs, optimizer, p, verbose=True):
     history = list()
+    mse = list()
     start_time = time.time()  # Start measuring time
 
     # Loop over epochs
@@ -92,11 +93,12 @@ def fit(model, training_set, num_epochs, optimizer, p, verbose=True):
 
         if verbose: print('Loss: ', (running_loss[0] / len(training_set)))
         history.append(running_loss[0])
+        mse.append(running_loss[0] / len(training_set))
 
     end_time = time.time()  # Stop measuring time
     run_time = end_time - start_time
 
-    return history, run_time / num_epochs
+    return history, mse, run_time / num_epochs
     
 
 class Legendre(nn.Module):
