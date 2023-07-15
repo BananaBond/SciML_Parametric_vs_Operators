@@ -1,0 +1,83 @@
+Setting 1
+{
+neurons_per_layer = 30
+num_hidden_layers = 4
+
+model = NeuralNet(
+    input_dimension=2+d,
+    output_dimension=1,
+    n_hidden_layers=num_hidden_layers,
+    neurons=neurons_per_layer,
+    regularization_exp=0,
+    regularization_param=0,
+    retrain_seed=1
+    )
+
+
+modes = 2
+width = 16
+n_layers = 1
+
+fno_architecture = {
+    "modes": modes,
+    "width": width,
+    "n_layers": n_layers,
+    "retrain_fno": 1
+}
+int_width = 32 (was hardcoded to 128)
+
+}
+------------------------------------------------------------------------------------------
+
+neurons_per_layer = 28
+num_hidden_layers = 2
+
+model = NeuralNet(
+    input_dimension=2+d,
+    output_dimension=1,
+    n_hidden_layers=num_hidden_layers,
+    neurons=neurons_per_layer,
+    regularization_exp=0,
+    regularization_param=0,
+    retrain_seed=1
+    )
+
+
+
+modes = 2
+width = 8
+n_layers = 1
+
+fno_architecture = {
+    "modes": modes,
+    "width": width,
+    "n_layers": n_layers,
+    "retrain_fno": 1
+}
+int_width = 32 (was hardcoded to 128)
+
+------------------------------------------------------------------------------------------------
+neurons_per_layer = 26
+num_hidden_layers = 3
+
+model = NeuralNet(
+    input_dimension=2+d,
+    output_dimension=1,
+    n_hidden_layers=num_hidden_layers,
+    neurons=neurons_per_layer,
+    regularization_exp=0,
+    regularization_param=0,
+    retrain_seed=1
+    )
+
+
+modes = 2
+width = 8
+n_layers = 2
+
+fno_architecture = {
+    "modes": modes,
+    "width": width,
+    "n_layers": n_layers,
+    "retrain_fno": 1
+}
